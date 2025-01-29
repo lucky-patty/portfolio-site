@@ -1,6 +1,6 @@
 # Portfolio Website
 ![CC-BY-4.0](https://licensebuttons.net/l/by/4.0/80x15.png)
-s
+<br />
 This repository contains my portfolio website, including both **code** and **content**.
 
 ## 📜 Licensing
@@ -11,6 +11,6 @@ This repository contains my portfolio website, including both **code** and **con
 
 ## ℹ️ Attribution
 If you reuse any of my **content**, please credit:
-- **Author:** [Pattarathon Watanakij]
-- **Source:** [https://github.com/lucky-patty/portfolio-site.git]
+- **Author:** Pattarathon Watanakij
+- **Source:** https://github.com/lucky-patty/portfolio-site.git
 - **License:** [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
