@@ -22,7 +22,7 @@
 			<div class="flex w-full md:h-1/5">
 				<a class="flex h-full w-full flex-row items-center gap-5" href="/">
 					{#if page.url.pathname === '/'}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'home'} color={'#F4EFEF'} />
 						</div>
 						<p
@@ -31,7 +31,7 @@
 							Home
 						</p>
 					{:else}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4  w-1/5 justify-center">
 							<LayoutIcon icon={'home'} color={'#6A6A6A'} />
 						</div>
 						<p
@@ -45,7 +45,7 @@
 			<div class="flex w-full md:h-1/5">
 				<a class="flex h-full w-full flex-row items-center gap-5" href="/experience">
 					{#if page.url.pathname === '/experience'}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'exp'} color={'#F4EFEF'} />
 						</div>
 						<p
@@ -54,7 +54,7 @@
 							Experience
 						</p>
 					{:else}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'exp'} color={'#6A6A6A'} />
 						</div>
 						<p
@@ -68,7 +68,7 @@
 			<div class="flex w-full md:h-1/5">
 				<a class="flex h-full w-full flex-row items-center gap-5" href="/project">
 					{#if page.url.pathname === '/project'}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'project'} color={'#F4EFEF'} />
 						</div>
 						<p
@@ -77,7 +77,7 @@
 							Project
 						</p>
 					{:else}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'project'} color={'#6A6A6A'} />
 						</div>
 						<p
@@ -91,7 +91,7 @@
 			<div class="flex w-full md:h-1/5">
 				<a class="flex h-full w-full flex-row items-center gap-5" href="/about">
 					{#if page.url.pathname === '/about'}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'about'} color={'#F4EFEF'} />
 						</div>
 						<p
@@ -100,7 +100,7 @@
 							About
 						</p>
 					{:else}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'about'} color={'#6A6A6A'} />
 						</div>
 						<p
@@ -119,7 +119,7 @@
 			<div class="flex h-1/4 w-full">
 				<a class="flex h-full w-full flex-row items-center gap-5" href="/contact">
 					{#if page.url.pathname === '/contact'}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'contact'} color={'#F4EFEF'} />
 						</div>
 						<p
@@ -128,7 +128,7 @@
 							Contact
 						</p>
 					{:else}
-						<div class="flex h-4/5 w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'contact'} color={'#6A6A6A'} />
 						</div>
 						<p
@@ -140,7 +140,7 @@
 				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<div class="flex h-4/5 w-1/5 justify-center">
+				<div class="flex h-2/5 w-1/5 justify-center">
 					<LayoutIcon icon={'linkedin'} color={'#6A6A6A'} />
 				</div>
 				<p class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
@@ -151,7 +151,7 @@
 				</div>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<div class="flex h-4/5 w-1/5 justify-center">
+				<div class="flex h-2/5 w-1/5 justify-center">
 					<LayoutIcon icon={'github'} color={'#6A6A6A'} />
 				</div>
 				<p class=" flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
