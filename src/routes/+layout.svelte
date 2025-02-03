@@ -1,5 +1,15 @@
 <script lang="ts">
 	import '../app.css';
+	import homeIcon from '$lib/icons/home.svg';
+	import expIcon from '$lib/icons/experience.svg';
+	import projectIcon from '$lib/icons/projects.svg';
+	import aboutIcon from '$lib/icons/about.svg';
+	import contactIcon from '$lib/icons/contact.svg';
+	import linkedinIcon from '$lib/icons/linkedin.svg';
+	import githubIcon from '$lib/icons/github.svg';
+	import externalIcon from '$lib/icons/external-link.svg';
+	import { page } from '$app/state';
+	import LayoutIcon from '$lib/components/LayoutIcon.svelte';
 	let { children } = $props();
 </script>
 
@@ -10,31 +20,153 @@
 <!-- Layout for normal PC / Ipad -->
 <div class="flex hidden h-screen w-screen flex-row lg:flex">
 	<div class="flex h-full w-1/4 flex-col items-center justify-center gap-5 bg-[#2A2A2A] px-5 py-5">
-		<div class="flex h-1/5 md:w-full xl:w-4/5 3xl:w-3/5 flex-col justify-center py-5">
-			<p class=" text-[#F4EFEF] text-3xl xl:text-5xl 3xl:text-6xl">Pattarathon W.</p>
+		<div class="flex h-1/5 flex-col justify-center py-5 md:w-full xl:w-4/5 3xl:w-3/5">
+			<p class=" text-3xl text-[#F4EFEF] xl:text-5xl 3xl:text-6xl">Pattarathon W.</p>
 			<p class="text-2xl text-[#ADA5A5] xl:text-3xl 3xl:text-4xl">Software Engineer</p>
 		</div>
-		<div class="h-2/5 md:w-full  xl:w-4/5 3xl:w-3/5 flex flex-col">
-			<p class="w-full h-1/5 2xl:text-4xl font-bold text-[#ADA5A5]">Explore</p>
-			<div class="w-full h-1/5 flex flex-row items-center gap-5">
-				<div class="w-1/5 h-4/5 bg-pink-500"></div>
-				<p class="w-4/5 h-4/5 flex items-center  2xl:text-4xl text-[#F4EFEF] font-bold">Home</p>
+		<div class="flex h-2/5 flex-col md:w-full xl:w-4/5 3xl:w-3/5">
+			<p class="h-1/5 w-full font-bold text-[#ADA5A5] md:text-3xl 2xl:text-4xl">Explore</p>
+			<div class="flex w-full flex-row items-center gap-5 md:h-1/5">
+				{#if page.url.pathname === '/'}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'home'} color={'#F4EFEF'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#F4EFEF] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Home
+					</p>
+				{:else}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'home'} color={'#6A6A6A'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Home
+					</p>
+				{/if}
 			</div>
-			<div class="w-full h-1/5 flex flex-row items-center gap-5 ">
-				<div class="w-1/5 h-4/5 bg-pink-500"></div>
-				<p class="w-4/5 h-4/5 flex items-center  2xl:text-4xl text-[#F4EFEF] font-bold">Experience</p>
+			<div class="flex h-1/5 w-full flex-row items-center gap-5">
+				{#if page.url.pathname === '/experience'}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'exp'} color={'#F4EFEF'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#F4EFEF] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Experience
+					</p>
+				{:else}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'exp'} color={'#6A6A6A'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Experience
+					</p>
+				{/if}
 			</div>
-			<div class="w-full h-1/5 flex flex-row items-center gap-5 ">
-				<div class="w-1/5 h-4/5 bg-pink-500"></div>
-				<p class="w-4/5 h-4/5 flex items-center  2xl:text-4xl text-[#F4EFEF] font-bold">Projects</p>
+			<div class="flex h-1/5 w-full flex-row items-center gap-5">
+				<!-- <div class="w-1/5 h-4/5 flex justify-center">
+					<img src={projectIcon} alt='project-icon' />
+				</div>
+				<p class="w-4/5 h-4/5 flex items-center md:text-3xl  xl:text-2xl 3xl:text-4xl text-[#F4EFEF] font-bold">Projects</p> -->
+				{#if page.url.pathname === '/project'}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'project'} color={'#F4EFEF'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#F4EFEF] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Project
+					</p>
+				{:else}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'project'} color={'#6A6A6A'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Project
+					</p>
+				{/if}
 			</div>
-			<div class="w-full h-1/5 flex flex-row items-center gap-5">
-				<div class="w-1/5 h-4/5 bg-pink-500"></div>
-				<p class="w-4/5 h-4/5 flex items-center  2xl:text-4xl text-[#F4EFEF] font-bold">About</p>
+			<div class="flex h-1/5 w-full flex-row items-center gap-5">
+				<!-- <div class="w-1/5 h-4/5 flex justify-center">
+					<img src={aboutIcon} alt='about-icon' />
+				</div>
+				<p class="w-4/5 h-4/5 flex items-center md:text-3xl  xl:text-2xl 3xl:text-4xl text-[#F4EFEF] font-bold">About</p> -->
+				{#if page.url.pathname === '/about'}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'about'} color={'#F4EFEF'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#F4EFEF] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						About
+					</p>
+				{:else}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'about'} color={'#6A6A6A'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						About
+					</p>
+				{/if}
 			</div>
-			
 		</div>
-		<div class="h-2/5 md:w-full xl:w-4/5 3xl:w-3/5 bg-green-500"></div>
+		<div class="flex h-2/5 flex-col md:w-full xl:w-4/5 3xl:w-3/5">
+			<p class="flex h-1/5 w-full items-center font-bold text-[#ADA5A5] md:text-3xl 2xl:text-4xl">
+				Contact
+			</p>
+			<div class="flex h-1/4 w-full flex-row items-center gap-5">
+				{#if page.url.pathname === '/contact'}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'contact'} color={'#F4EFEF'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#F4EFEF] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Contact
+					</p>
+				{:else}
+					<div class="flex h-4/5 w-1/5 justify-center">
+						<LayoutIcon icon={'contact'} color={'#6A6A6A'} />
+					</div>
+					<p
+						class="flex h-4/5 w-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl xl:text-2xl 3xl:text-4xl"
+					>
+						Contact
+					</p>
+				{/if}
+			</div>
+			<div class="flex h-1/4 w-full flex-row items-center gap-5">
+				<div class="flex h-4/5 w-1/5 justify-center">
+					<LayoutIcon icon={'linkedin'} color={'#6A6A6A'} />
+				</div>
+				<p class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+					LinkedIn
+				</p>
+				<div class="flex h-4/5 w-1/5 justify-center items-center">
+					<img class="w-2/4 h-2/4" src={externalIcon} alt="external-icon" />
+				</div>
+			</div>
+			<div class="flex h-1/4 w-full flex-row items-center gap-5">
+				<div class="flex h-4/5 w-1/5 justify-center">
+					<LayoutIcon icon={'github'} color={'#6A6A6A'} />
+				</div>
+				<p class=" flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+					GitHub
+				</p>
+				<div class="flex h-4/5 w-1/5 justify-center items-center">
+					<img class="w-2/4 h-2/4" src={externalIcon} alt="external-icon" />
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="h-full w-3/4 bg-[#212121] px-5 py-5">
 		{@render children()}
