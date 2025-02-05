@@ -31,7 +31,7 @@
 							Home
 						</p>
 					{:else}
-						<div class="flex h-2/4  w-1/5 justify-center">
+						<div class="flex h-2/4 w-1/5 justify-center">
 							<LayoutIcon icon={'home'} color={'#6A6A6A'} />
 						</div>
 						<p
@@ -117,26 +117,16 @@
 				Contact
 			</p>
 			<div class="flex h-1/4 w-full">
-				<a class="flex h-full w-full flex-row items-center gap-5" href="/contact">
-					{#if page.url.pathname === '/contact'}
-						<div class="flex h-2/4 w-1/5 justify-center">
-							<LayoutIcon icon={'contact'} color={'#F4EFEF'} />
-						</div>
-						<p
-							class="flex h-4/5 w-4/5 items-center font-bold text-[#F4EFEF] md:text-3xl xl:text-2xl 3xl:text-4xl"
-						>
-							Contact
-						</p>
-					{:else}
-						<div class="flex h-2/4 w-1/5 justify-center">
-							<LayoutIcon icon={'contact'} color={'#6A6A6A'} />
-						</div>
-						<p
-							class="flex h-4/5 w-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl xl:text-2xl 3xl:text-4xl"
-						>
-							Contact
-						</p>
-					{/if}
+				<a class="flex h-full w-full flex-row items-center gap-5" href="mailto:luck.wtj@gmail.com">
+					<div class="flex h-2/5 w-1/5 justify-center">
+						<LayoutIcon icon={'contact'} color={'#6A6A6A'} />
+					</div>
+					<p class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+						Contact
+					</p>
+					<div class="flex h-4/5 w-1/5 items-center justify-center">
+						<img class="h-2/4 w-2/4" src={externalIcon} alt="external-icon" />
+					</div>
 				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
