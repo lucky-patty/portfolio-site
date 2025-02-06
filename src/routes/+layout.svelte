@@ -130,26 +130,30 @@
 				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<div class="flex h-2/5 w-1/5 justify-center">
-					<LayoutIcon icon={'linkedin'} color={'#6A6A6A'} />
-				</div>
-				<p class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
-					LinkedIn
-				</p>
-				<div class="flex h-4/5 w-1/5 items-center justify-center">
-					<img class="h-2/4 w-2/4" src={externalIcon} alt="external-icon" />
-				</div>
+				<a class="flex h-full w-full flex-row items-center gap-5"  href="https://www.linkedin.com/in/pattarathon-watanakij-10856a121/">
+					<div class="flex h-2/5 w-1/5 justify-center">
+						<LayoutIcon icon={'linkedin'} color={'#6A6A6A'} />
+					</div>
+					<p class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+						LinkedIn
+					</p>
+					<div class="flex h-4/5 w-1/5 items-center justify-center">
+						<img class="h-2/4 w-2/4" src={externalIcon} alt="external-icon" />
+					</div>
+				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<div class="flex h-2/5 w-1/5 justify-center">
-					<LayoutIcon icon={'github'} color={'#6A6A6A'} />
-				</div>
-				<p class=" flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
-					GitHub
-				</p>
-				<div class="flex h-4/5 w-1/5 items-center justify-center">
-					<img class="h-2/4 w-2/4" src={externalIcon} alt="external-icon" />
-				</div>
+				<a class="flex h-full w-full flex-row items-center gap-5" href="https://github.com/lucky-patty">
+					<div class="flex h-2/5 w-1/5 justify-center">
+						<LayoutIcon icon={'github'} color={'#6A6A6A'} />
+					</div>
+					<p class=" flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+						GitHub
+					</p>
+					<div class="flex h-4/5 w-1/5 items-center justify-center">
+						<img class="h-2/4 w-2/4" src={externalIcon} alt="external-icon" />
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>

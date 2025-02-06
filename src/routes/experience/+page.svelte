@@ -1,17 +1,38 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	let box:any;
-	let yScroll = 0; 
+	import { onMount } from 'svelte';
+	let box: any;
+	let yScroll = 0;
 	let yHeight = 0;
 	let yTop = 0;
+	let firstExp = false;
+	let secondExp = false;
+	let thirdExp = false;
 
 	function parseScroll() {
 		yTop = box.scrollTop;
-		yScroll  = box.scrollHeight;
-		yHeight= box.clientHeight
+		yScroll = box.scrollHeight;
+		yHeight = box.clientHeight;
+		const thirdPage = (yScroll - yHeight); // This is 3
+		const secondPage = (thirdPage / 2) // we assume that 100 is enough space to scroll;
+		const firstPage = (thirdPage / 3);
+		if (yTop <= firstPage) {
+			firstExp = true;
+			secondExp = false;
+			thirdExp = false;
+		} else if (yTop <= thirdPage - 200 && yTop > firstPage) {
+			// We assume that 200 is enough space for the scroll object
+			firstExp = false;
+			secondExp = true;
+			thirdExp = false;
+		} else if (yTop <= thirdPage - 100 && yTop > secondPage + 100) {
+			// We assume that 100 is enough space to cover 
+			firstExp = false;
+			secondExp = false;
+			thirdExp = true;
+		}
 	}
 
-	onMount (() => parseScroll())
+	onMount(() => parseScroll());
 </script>
 
 <div class="flex h-full w-full flex-col gap-5 px-5 py-5">
@@ -23,14 +44,49 @@
 		</p>
 	</div>
 	<div class="flex h-3/4 w-full flex-col gap-5">
-		<span class="text-white text-3xl">{yScroll}, {yHeight}, {yTop}</span>
-		<div class="w-[90%] h-[10%] flex flex-row items-center justify-between ">
-            <div class="w-[5%] flex justify-center items-center h-full rounded-[50%] font-bold text-[#F4EFEF] bg-[#292929]">1</div>
-            <div class="w-[40%] h-[10%] bg-[#ADA5A5] "></div>
-            <div class="w-[5%] flex justify-center items-center h-full rounded-[50%] font-bold text-[#F4EFEF] bg-[#292929]">2</div>
-            <div class="w-[40%] h-[10%] bg-[#ADA5A5] "></div>
-            <div class="w-[5%] flex justify-center items-center h-full rounded-[50%] font-bold text-[#F4EFEF] bg-[#292929]">3</div>
-        </div>
+		<div class="flex h-[10%] w-[90%] flex-row items-center justify-between">
+			{#if firstExp}
+				<div
+					class="flex h-full w-[5%] items-center justify-center rounded-[50%] bg-[#292929] font-bold text-[#F4EFEF]"
+				>
+					1
+				</div>
+			{:else}
+				<div
+					class="flex h-full w-[5%] items-center justify-center rounded-[50%] bg-[#292929] font-bold text-[#6A6A6A]"
+				>
+					1
+				</div>
+			{/if}
+			<div class="h-[10%] w-[40%] bg-[#ADA5A5]"></div>
+			{#if secondExp}
+				<div
+					class="flex h-full w-[5%] items-center justify-center rounded-[50%] bg-[#292929] font-bold text-[#F4EFEF]"
+				>
+					2
+				</div>
+			{:else}
+				<div
+					class="flex h-full w-[5%] items-center justify-center rounded-[50%] bg-[#292929] font-bold text-[#6A6A6A]"
+				>
+					2
+				</div>
+			{/if}
+			<div class="h-[10%] w-[40%] bg-[#ADA5A5]"></div>
+			{#if thirdExp}
+				<div
+					class="flex h-full w-[5%] items-center justify-center rounded-[50%] bg-[#292929] font-bold text-[#F4EFEF]"
+				>
+					3
+				</div>
+			{:else}
+				<div
+					class="flex h-full w-[5%] items-center justify-center rounded-[50%] bg-[#292929] font-bold text-[#6A6A6A]"
+				>
+					3
+				</div>
+			{/if}
+		</div>
 		<div class="h-[65vh] w-full gap-20 overflow-y-scroll" bind:this={box} on:scroll={parseScroll}>
 			<div class="flex h-[65vh] w-[90%] flex-col items-center justify-center">
 				<div class="flex h-4/5 w-[90%] flex-col justify-center rounded-3xl bg-[#292929] px-5 py-10">
@@ -82,144 +138,96 @@
 			<div class="flex h-[65vh] w-[90%] flex-col items-center justify-center">
 				<div class="flex h-4/5 w-[90%] flex-col justify-center rounded-3xl bg-[#292929] px-5 py-10">
 					<div class="flex h-1/5 w-full flex-row justify-between">
-						<div class="h-full w-2/5 text-4xl font-bold text-[#ADA5A5]">2023 - Present</div>
+						<div class="h-full w-2/5 text-4xl font-bold text-[#ADA5A5]">2018 - 2023</div>
 						<div class="h-full w-3/5 text-end text-4xl font-bold text-[#F4EFEF]">
-							Project Owner · BonkDAO
+							Full-stack Dev · Twinmoon Studio
 						</div>
 					</div>
 					<div class="flex h-3/5 w-full flex-col">
 						<p class="h-full w-full text-3xl text-[#D3D3D3]">
-							I independently designed, developed, and launched a blockchain platform from the
-							ground up, deploying on multiple networks, including Binance Smart Chain and TON. I
-							handled everything—from smart contract development and full-stack implementation to
-							marketing and community building. Through strategic growth initiatives, I scaled the
-							project from zero users to 570 active participants and fostered a thriving community
-							of over 2,500 members
+							I design, develop, and automate websites and mobile applications while ensuring
+							seamless functionality through rigorous testing. My role involves crafting scalable
+							solutions, optimizing performance, and implementing automated workflows to enhance
+							development efficiency and product reliability
 						</p>
 					</div>
 					<div class="flex h-[10%] w-full flex-row justify-between gap-5">
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							Solidity
+							Node.JS
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							Ether.js
+							PostgreSQL
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							FunC
+							Next.JS
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							React
+							Elixir
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							GoLang
+							Flutter
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div class="flex h-[65vh] w-[90%] flex-col items-center justify-center">
 				<div class="flex h-4/5 w-[90%] flex-col justify-center rounded-3xl bg-[#292929] px-5 py-10">
 					<div class="flex h-1/5 w-full flex-row justify-between">
-						<div class="h-full w-2/5 text-4xl font-bold text-[#ADA5A5]">2023 - Present</div>
+						<div class="h-full w-2/5 text-4xl font-bold text-[#ADA5A5]">2017 - 2018</div>
 						<div class="h-full w-3/5 text-end text-4xl font-bold text-[#F4EFEF]">
-							Project Owner · BonkDAO
+							Embedded Engineer · AVIA Satcom
 						</div>
 					</div>
 					<div class="flex h-3/5 w-full flex-col">
 						<p class="h-full w-full text-3xl text-[#D3D3D3]">
-							I independently designed, developed, and launched a blockchain platform from the
-							ground up, deploying on multiple networks, including Binance Smart Chain and TON. I
-							handled everything—from smart contract development and full-stack implementation to
-							marketing and community building. Through strategic growth initiatives, I scaled the
-							project from zero users to 570 active participants and fostered a thriving community
-							of over 2,500 members
+							I developed software for embedded systems that controlled unmanned aircraft systems
+							(UAS). My work involved designing, optimizing, and implementing low-level firmware and
+							real-time applications to ensure precise control, stability, and efficiency of
+							autonomous flight operations. I specialized in integrating sensor data processing,
+							communication protocols, and fail-safe mechanisms to enhance system reliability and
+							performance in critical environments
 						</p>
 					</div>
 					<div class="flex h-[10%] w-full flex-row justify-between gap-5">
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							Solidity
+							C++
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							Ether.js
+							Java
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							FunC
+							React.JS
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							React
+							MySQL
 						</div>
 						<div
 							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
 						>
-							GoLang
+							PHP
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
-		<!-- <div class="flex h-4/5 w-[90%] flex-col justify-center rounded-3xl bg-[#292929] px-5 py-10">
-			<div class="flex h-1/5 w-full flex-row justify-between">
-				<div class="h-full w-2/5 text-4xl font-bold text-[#ADA5A5]">2023 - Present</div>
-				<div class="h-full w-3/5 text-end text-4xl font-bold text-[#F4EFEF]">
-					Project Owner · BonkDAO
-				</div>
-			</div>
-			<div class="flex h-3/5 w-full flex-col">
-				<p class="h-full w-full text-3xl text-[#D3D3D3]">
-					I independently designed, developed, and launched a blockchain platform from the ground
-					up, deploying on multiple networks, including Binance Smart Chain and TON. I handled
-					everything—from smart contract development and full-stack implementation to marketing and
-					community building. Through strategic growth initiatives, I scaled the project from zero
-					users to 570 active participants and fostered a thriving community of over 2,500 members
-				</p>
-			</div>
-			<div class="flex h-[10%] w-full flex-row justify-between gap-5">
-				<div
-					class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-				>
-					Solidity
-				</div>
-				<div
-					class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-				>
-					Ether.js
-				</div>
-				<div
-					class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-				>
-					FunC
-				</div>
-				<div
-					class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-				>
-					React
-				</div>
-				<div
-					class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-				>
-					GoLang
-				</div>
-			</div>
-		</div> -->
 	</div>
 </div>
 
