@@ -4,13 +4,18 @@
 	import bbPreview from '$lib/images/project-bb.png';
 	import ddPreview from '$lib/images/project-dd.png';
 	import { onMount } from 'svelte';
+	import type { PageData } from './$types';
+
+	// Load Server Data
+	let { data } : { data: PageData} = $props();
+
 	let box: any;
 	let yScroll = 0;
 	let yHeight = 0;
 	let yTop = 0;
-	let firstExp = false;
-	let secondExp = false;
-	let thirdExp = false;
+	let firstExp = $state(false);
+	let secondExp = $state(false);
+	let thirdExp = $state(false);
 
 	function parseScroll() {
 		yTop = box.scrollTop;
@@ -119,7 +124,11 @@
 							class="flex h-[10%] w-full flex-row items-center justify-between rounded-xl bg-[#212121] px-5"
 						>
 							<span class="full w-1/5 font-bold text-[#6A6A6A]">Status</span>
+							{#if data.bonk}
 							<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
+							{:else}
+							<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Offline</span>
+							{/if}
 						</div>
 					</div>
 					<div class=" flex h-full w-2/5 flex-col">
@@ -159,7 +168,12 @@
 							class="flex h-[10%] w-full flex-row items-center justify-between rounded-xl bg-[#212121] px-5"
 						>
 							<span class="full w-1/5 font-bold text-[#6A6A6A]">Status</span>
-							<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
+							{#if data.dd}
+								<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
+							{:else}
+								<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Offline</span>
+							{/if}
+							
 						</div>
 					</div>
 					<div class=" flex h-full w-2/5 flex-col">
@@ -198,7 +212,12 @@
 							class="flex h-[10%] w-full flex-row items-center justify-between rounded-xl bg-[#212121] px-5"
 						>
 							<span class="full w-1/5 font-bold text-[#6A6A6A]">Status</span>
-							<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
+							{#if data.bb}
+
+								<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
+								{:else}
+								<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Offline</span>
+							{/if}
 						</div>
 					</div>
 					<div class=" flex h-full w-2/5 flex-col">

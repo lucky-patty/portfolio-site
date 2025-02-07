@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>PW.</title>
+	<title>PW. Portfolio</title>
 </svelte:head>
 
 <!-- Layout for normal PC / Ipad -->
