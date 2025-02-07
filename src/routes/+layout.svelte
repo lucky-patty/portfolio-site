@@ -3,6 +3,7 @@
 	import externalIcon from '$lib/icons/external-link.svg';
 	import { page } from '$app/state';
 	import LayoutIcon from '$lib/components/LayoutIcon.svelte';
+	import MobileLayoutMenu from '$lib/components/MobileLayoutMenu.svelte';
 	let { children } = $props();
 </script>
 
@@ -117,11 +118,17 @@
 				Contact
 			</p>
 			<div class="flex h-1/4 w-full">
-				<a class="flex h-full w-full flex-row items-center gap-5" target="_blank" href="mailto:luck.wtj@gmail.com">
+				<a
+					class="flex h-full w-full flex-row items-center gap-5"
+					target="_blank"
+					href="mailto:luck.wtj@gmail.com"
+				>
 					<div class="flex h-2/5 w-1/5 justify-center">
 						<LayoutIcon icon={'contact'} color={'#6A6A6A'} />
 					</div>
-					<p class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+					<p
+						class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl 3xl:text-4xl"
+					>
 						Contact
 					</p>
 					<div class="flex h-4/5 w-1/5 items-center justify-center">
@@ -130,11 +137,17 @@
 				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<a class="flex h-full w-full flex-row items-center gap-5" target="_blank"  href="https://www.linkedin.com/in/pattarathon-watanakij-10856a121/">
+				<a
+					class="flex h-full w-full flex-row items-center gap-5"
+					target="_blank"
+					href="https://www.linkedin.com/in/pattarathon-watanakij-10856a121/"
+				>
 					<div class="flex h-2/5 w-1/5 justify-center">
 						<LayoutIcon icon={'linkedin'} color={'#6A6A6A'} />
 					</div>
-					<p class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+					<p
+						class="flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl 3xl:text-4xl"
+					>
 						LinkedIn
 					</p>
 					<div class="flex h-4/5 w-1/5 items-center justify-center">
@@ -143,11 +156,17 @@
 				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<a class="flex h-full w-full flex-row items-center gap-5" target="_blank" href="https://github.com/lucky-patty">
+				<a
+					class="flex h-full w-full flex-row items-center gap-5"
+					target="_blank"
+					href="https://github.com/lucky-patty"
+				>
 					<div class="flex h-2/5 w-1/5 justify-center">
 						<LayoutIcon icon={'github'} color={'#6A6A6A'} />
 					</div>
-					<p class=" flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl">
+					<p
+						class=" flex h-4/5 items-center font-bold text-[#6A6A6A] md:text-3xl 2xl:text-2xl 3xl:text-4xl"
+					>
 						GitHub
 					</p>
 					<div class="flex h-4/5 w-1/5 items-center justify-center">
@@ -163,10 +182,67 @@
 </div>
 
 <!-- Layout for mobile -->
-<div class="flex h-screen w-screen flex-col lg:hidden xl:hidden 2xl:hidden 3xl:hidden">
-	<div class="h-4/5 w-full bg-[#212121] px-5 py-5">
+<div class="flex h-screen w-screen flex-col bg-[#212121] lg:hidden xl:hidden 2xl:hidden 3xl:hidden">
+	<div class="flex h-[90%] w-full flex-col bg-[#212121] px-5 lg:py-5">
 		{@render children()}
 	</div>
 	<!-- Menu -->
-	<div class="h-1/5 w-full bg-[#2A2A2A]"></div>
+	<div class="fixed bottom-0 left-0 z-40 h-[10%] w-full bg-[#212121]">
+		<div
+			class="flex h-full w-full flex-row items-center justify-between gap-1 rounded-t-3xl bg-[#2A2A2A] py-2"
+		>
+			{#if page.url.pathname === '/'}
+				<a class="h-full w-full " href="/">
+					<MobileLayoutMenu icon={'home'} color={'#F4EFEF'} />
+				</a>
+			{:else}
+				<a class="h-full w-full " href="/">
+					<MobileLayoutMenu icon={'home'} color={'#6A6A6A'} />
+				</a>
+			{/if}
+
+			{#if page.url.pathname === '/exp'}
+			<a class="h-full w-full " href="/experience">
+				<MobileLayoutMenu icon={'exp'} color={'#F4EFEF'} />
+			</a>
+			{:else}
+			<a class="h-full w-full " href="/experience">
+				<MobileLayoutMenu icon={'exp'} color={'#6A6A6A'} />
+			</a>
+			{/if}
+
+			{#if page.url.pathname === '/project'}
+			<a class="h-full w-full " href="/project">
+				<MobileLayoutMenu icon={'project'} color={'#F4EFEF'} />
+			</a>
+			{:else}
+			<a class="h-full w-full " href="/project">
+				<MobileLayoutMenu icon={'project'} color={'#6A6A6A'} />
+			</a>
+			{/if}
+
+			{#if page.url.pathname === '/about'}
+			<a class="h-full w-full " href="/about">
+				<MobileLayoutMenu icon={'about'} color={'#F4EFEF'} />
+			</a>
+			{:else}
+			<a class="h-full w-full " href="/about">
+				<MobileLayoutMenu icon={'about'} color={'#6A6A6A'} />
+			</a>
+			{/if}
+
+			{#if page.url.pathname === '/contact'}
+			<a class="h-full w-full " href="/contact">
+				<MobileLayoutMenu icon={'contact'} color={'#F4EFEF'} />
+			</a>
+			{:else}
+			<a class="h-full w-full " href="/contact">
+				<MobileLayoutMenu icon={'contact'} color={'#6A6A6A'} />
+			</a>
+			{/if}
+		</div>
+	</div>
 </div>
+
+<style>
+</style>
