@@ -117,7 +117,7 @@
 				Contact
 			</p>
 			<div class="flex h-1/4 w-full">
-				<a class="flex h-full w-full flex-row items-center gap-5" href="mailto:luck.wtj@gmail.com">
+				<a class="flex h-full w-full flex-row items-center gap-5" target="_blank" href="mailto:luck.wtj@gmail.com">
 					<div class="flex h-2/5 w-1/5 justify-center">
 						<LayoutIcon icon={'contact'} color={'#6A6A6A'} />
 					</div>
@@ -130,7 +130,7 @@
 				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<a class="flex h-full w-full flex-row items-center gap-5"  href="https://www.linkedin.com/in/pattarathon-watanakij-10856a121/">
+				<a class="flex h-full w-full flex-row items-center gap-5" target="_blank"  href="https://www.linkedin.com/in/pattarathon-watanakij-10856a121/">
 					<div class="flex h-2/5 w-1/5 justify-center">
 						<LayoutIcon icon={'linkedin'} color={'#6A6A6A'} />
 					</div>
@@ -143,7 +143,7 @@
 				</a>
 			</div>
 			<div class="flex h-1/4 w-full flex-row items-center gap-5">
-				<a class="flex h-full w-full flex-row items-center gap-5" href="https://github.com/lucky-patty">
+				<a class="flex h-full w-full flex-row items-center gap-5" target="_blank" href="https://github.com/lucky-patty">
 					<div class="flex h-2/5 w-1/5 justify-center">
 						<LayoutIcon icon={'github'} color={'#6A6A6A'} />
 					</div>

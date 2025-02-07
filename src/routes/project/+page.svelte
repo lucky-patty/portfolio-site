@@ -1,4 +1,8 @@
 <script lang="ts">
+	import externalIcon from '$lib/icons/external-link.svg';
+	import bonkPreview from '$lib/images/project-bonk.png';
+	import bbPreview from '$lib/images/project-bb.png';
+	import ddPreview from '$lib/images/project-dd.png';
 	import { onMount } from 'svelte';
 	let box: any;
 	let yScroll = 0;
@@ -12,9 +16,9 @@
 		yTop = box.scrollTop;
 		yScroll = box.scrollHeight;
 		yHeight = box.clientHeight;
-		const thirdPage = (yScroll - yHeight); // This is 3
-		const secondPage = (thirdPage / 2) // we assume that 100 is enough space to scroll;
-		const firstPage = (thirdPage / 3);
+		const thirdPage = yScroll - yHeight; // This is 3
+		const secondPage = thirdPage / 2; // we assume that 100 is enough space to scroll;
+		const firstPage = thirdPage / 3;
 		if (yTop <= firstPage) {
 			firstExp = true;
 			secondExp = false;
@@ -25,7 +29,7 @@
 			secondExp = true;
 			thirdExp = false;
 		} else if (yTop <= thirdPage - 100 && yTop > secondPage + 100) {
-			// We assume that 100 is enough space to cover 
+			// We assume that 100 is enough space to cover
 			firstExp = false;
 			secondExp = false;
 			thirdExp = true;
@@ -90,135 +94,121 @@
 		</div>
 		<div class="h-[65vh] w-full gap-20 overflow-y-scroll" bind:this={box} on:scroll={parseScroll}>
 			<div class="flex h-[65vh] w-[90%] flex-col items-center justify-center">
-				<div class="flex h-4/5 w-[90%] flex-col justify-center rounded-3xl bg-[#292929] px-5 py-10">
-					<div class="flex h-1/5 w-full flex-row justify-start">
-						<div class="h-full w-3/5 text-end text-4xl font-bold text-[#F4EFEF]">
-							Project Owner · BonkDAO
+				<div class="flex h-4/5 w-[90%] flex-row items-center rounded-3xl bg-[#292929] px-5 py-5">
+					<div class="flex h-full w-3/5 flex-col items-start justify-start">
+						<div class=" h-1/5 w-full">
+							<a
+								class="flex h-full w-full flex-row items-center gap-5"
+								target="_blank"
+								href="https://t.me/BonkArcadeBot"
+							>
+								<p class="flex h-full items-center text-5xl font-bold text-[#F4EFEF]">BONKDAO</p>
+								<img class="h-1/3" src={externalIcon} alt={'link'} />
+							</a>
+						</div>
+						<div class="flex h-[70%] w-full flex-col py-5">
+							<p class="flex h-full w-full items-start justify-center text-2xl text-[#D3D3D3]">
+								I developed a Telegram Mini App that allows users to play arcade games and win
+								prizes in a win-to-earn model. The app also features a staking system, enabling
+								users to stake native tokens for higher rewards, with support for Binance Smart
+								Chain and Avalanche. To enhance user privacy and security, the app automatically
+								generates a wallet for each user, ensuring seamless and decentralized transactions.
+							</p>
+						</div>
+						<div
+							class="flex h-[10%] w-full flex-row items-center justify-between rounded-xl bg-[#212121] px-5"
+						>
+							<span class="full w-1/5 font-bold text-[#6A6A6A]">Status</span>
+							<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
 						</div>
 					</div>
-					<div class="flex h-3/5 w-full flex-col">
-						<p class="h-full w-full text-3xl text-[#D3D3D3]">
-							I developed a Telegram Mini App that allows users to play arcade games and win prizes in a win-to-earn model. The app also features a staking system, enabling users to stake native tokens for higher rewards, with support for Binance Smart Chain and Avalanche. To enhance user privacy and security, the app automatically generates a wallet for each user, ensuring seamless and decentralized transactions
-						</p>
-					</div>
-					<div class="flex h-[10%] w-full flex-row justify-between gap-5">
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
+					<div class=" flex h-full w-2/5 flex-col">
+						<a
+							class="flex h-full items-center justify-center"
+							target="_blank"
+							href="https://t.me/BonkArcadeBot"
 						>
-							Solidity
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							Ether.js
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							FunC
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							React
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							GoLang
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="flex h-[65vh] w-[90%] flex-col items-center justify-center">
-				<div class="flex h-4/5 w-[90%] flex-col justify-center rounded-3xl bg-[#292929] px-5 py-10">
-					<div class="flex h-1/5 w-full flex-row justify-between">
-						<div class="h-full w-2/5 text-4xl font-bold text-[#ADA5A5]">2018 - 2023</div>
-						<div class="h-full w-3/5 text-end text-4xl font-bold text-[#F4EFEF]">
-							Full-stack Dev · Twinmoon Studio
-						</div>
-					</div>
-					<div class="flex h-3/5 w-full flex-col">
-						<p class="h-full w-full text-3xl text-[#D3D3D3]">
-							I design, develop, and automate websites and mobile applications while ensuring
-							seamless functionality through rigorous testing. My role involves crafting scalable
-							solutions, optimizing performance, and implementing automated workflows to enhance
-							development efficiency and product reliability
-						</p>
-					</div>
-					<div class="flex h-[10%] w-full flex-row justify-between gap-5">
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							Node.JS
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							PostgreSQL
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							Next.JS
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							Elixir
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							Flutter
-						</div>
+							<img class="h-[90%]" src={bonkPreview} alt={'bonk'} />
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="flex h-[65vh] w-[90%] flex-col items-center justify-center">
-				<div class="flex h-4/5 w-[90%] flex-col justify-center rounded-3xl bg-[#292929] px-5 py-10">
-					<div class="flex h-1/5 w-full flex-row justify-between">
-						<div class="h-full w-2/5 text-4xl font-bold text-[#ADA5A5]">2017 - 2018</div>
-						<div class="h-full w-3/5 text-end text-4xl font-bold text-[#F4EFEF]">
-							Embedded Engineer · AVIA Satcom
+				<div class="flex h-4/5 w-[90%] flex-row items-center rounded-3xl bg-[#292929] px-5 py-5">
+					<div class="flex h-full w-3/5 flex-col items-start justify-start">
+						<div class=" h-1/5 w-full">
+							<a
+								class="flex h-full w-full flex-row items-center gap-5"
+								target="_blank"
+								href="https://drunkdude.co"
+							>
+								<p class="flex h-full items-center text-5xl font-bold text-[#F4EFEF]">Drunkdude</p>
+								<img class="h-1/3" src={externalIcon} alt={'link'} />
+							</a>
+						</div>
+						<div class="flex h-[70%] w-full flex-col py-5">
+							<p class="flex h-full w-full items-start justify-center text-2xl text-[#D3D3D3]">
+								I developed an eCommerce platform specializing in selling a wide range of beverages.
+								Built with Elixir to leverage high concurrency and scalability, the platform ensures
+								seamless performance even under heavy traffic. Additionally, it integrates with
+								crypto wallets, allowing users to connect their wallets for secure and decentralized
+								transactions.
+							</p>
+						</div>
+						<div
+							class="flex h-[10%] w-full flex-row items-center justify-between rounded-xl bg-[#212121] px-5"
+						>
+							<span class="full w-1/5 font-bold text-[#6A6A6A]">Status</span>
+							<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
 						</div>
 					</div>
-					<div class="flex h-3/5 w-full flex-col">
-						<p class="h-full w-full text-3xl text-[#D3D3D3]">
-							I developed software for embedded systems that controlled unmanned aircraft systems
-							(UAS). My work involved designing, optimizing, and implementing low-level firmware and
-							real-time applications to ensure precise control, stability, and efficiency of
-							autonomous flight operations. I specialized in integrating sensor data processing,
-							communication protocols, and fail-safe mechanisms to enhance system reliability and
-							performance in critical environments
-						</p>
+					<div class=" flex h-full w-2/5 flex-col">
+						<a
+							class="flex h-full items-center justify-center"
+							target="_blank"
+							href="https://drunkdude.co"
+						>
+							<img class="h-3/4" src={ddPreview} alt={'dd'} />
+						</a>
 					</div>
-					<div class="flex h-[10%] w-full flex-row justify-between gap-5">
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							C++
+				</div>
+			</div>
+			<div class="flex h-[65vh] w-[90%] flex-col items-center justify-center">
+				<div class="flex h-4/5 w-[90%] flex-row items-center rounded-3xl bg-[#292929] px-5 py-5">
+					<div class="flex h-full w-3/5 flex-col items-start justify-start">
+						<div class=" h-1/5 w-full">
+							<a
+								class="flex h-full w-full flex-row items-center gap-5"
+								target="_blank"
+								href="https://baitbuy.com"
+							>
+								<p class="flex h-full items-center text-5xl font-bold text-[#F4EFEF]">Baitbuy</p>
+								<img class="h-1/3" src={externalIcon} alt={'link'} />
+							</a>
+						</div>
+						<div class="flex h-[70%] w-full flex-col py-5">
+							<p class="flex h-full w-full items-start justify-center text-2xl text-[#D3D3D3]">
+								I developed a platform where users can write product reviews and earn rewards in the
+								form of tokens. The platform aggregates user-generated data to train an AI-powered
+								agent specialized in analyzing targeted products, helping users make informed
+								decisions while leveraging price optimization for better deals.
+							</p>
 						</div>
 						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
+							class="flex h-[10%] w-full flex-row items-center justify-between rounded-xl bg-[#212121] px-5"
 						>
-							Java
+							<span class="full w-1/5 font-bold text-[#6A6A6A]">Status</span>
+							<span class="full w-1/5 text-end font-bold text-[#F4EFEF]">Online</span>
 						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
+					</div>
+					<div class=" flex h-full w-2/5 flex-col">
+						<a
+							class="flex h-full items-center justify-center"
+							target="_blank"
+							href="https://baitbuy.com"
 						>
-							React.JS
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							MySQL
-						</div>
-						<div
-							class="flex h-full w-1/5 items-center justify-center rounded-2xl bg-[#212121] text-2xl text-[#ADA5A5]"
-						>
-							PHP
-						</div>
+							<img class="h-3/4" src={bbPreview} alt={'bb'} />
+						</a>
 					</div>
 				</div>
 			</div>
