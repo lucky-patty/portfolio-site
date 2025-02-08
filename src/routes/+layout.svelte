@@ -183,7 +183,7 @@
 
 <!-- Layout for mobile -->
 <div class="flex h-screen w-screen flex-col bg-[#212121] lg:hidden xl:hidden 2xl:hidden 3xl:hidden">
-	<div class="flex h-[90%] w-full flex-col bg-[#212121] px-5 lg:py-5">
+	<div class="flex h-[90%] w-full flex-col bg-[#212121] px-2 lg:px-5 lg:py-5">
 		{@render children()}
 	</div>
 	<!-- Menu -->
@@ -201,7 +201,7 @@
 				</a>
 			{/if}
 
-			{#if page.url.pathname === '/exp'}
+			{#if page.url.pathname === '/experience'}
 			<a class="h-full w-full " href="/experience">
 				<MobileLayoutMenu icon={'exp'} color={'#F4EFEF'} />
 			</a>

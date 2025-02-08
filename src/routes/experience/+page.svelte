@@ -35,16 +35,138 @@
 	onMount(() => parseScroll());
 </script>
 
-<div class="flex h-full w-full flex-col gap-5 px-5 py-5">
-	<div class="flex h-1/4 w-[90%] flex-col gap-10 py-5">
-		<p class="w-full text-6xl 3xl:text-8xl font-bold text-[#F4EFEF]">Experience</p>
-		<p class="h-2/4 w-full text-3xl 3xl:text-5xl font-thin text-[#ADA5A5]">
+<div class="flex flex-col w-full h-[3000rem] overflow-y-scroll gap-5 py-5 lg:hidden">
+	<p class="h-[40px] w-full text-5xl lg:text-6xl 3xl:text-8xl font-bold text-[#F4EFEF]">Experience</p>
+	<p class="h-[250px] w-full text-xl lg:text-3xl 3xl:text-5xl font-thin text-[#ADA5A5]">
+		I have built various software solutions, from websites to mobile apps, using diverse
+		technologies like React, SvelteKit, Golang, and Kubernetes. My experience spans frontend,
+		backend, and cloud infrastructure, leveraging CI/CD pipelines for scalable deployments.
+	</p>
+	<div class="flex h-[500px] w-full flex-col justify-start rounded-3xl bg-[#292929] gap-2 px-5 py-5">
+		<div class="w-full h-[20%] flex flex-col justify-between">
+			<p class="text-3xl font-bold text-[#F4EFEF]">2023 - Present</p>
+			<p class="text-2xl font-bold text-start text-[#ADA5A5]">Project Owner · BonkDAO</p>
+		</div>
+		<div class="w-full h-[350px] flex justify-center items-center">
+			<p class="text-[#D3D3D3]">
+				I independently designed, developed, and launched a blockchain platform from the
+							ground up, deploying on multiple networks, including Binance Smart Chain and TON. I
+							handled everything—from smart contract development and full-stack implementation to
+							marketing and community building. Through strategic growth initiatives, I scaled the
+							project from zero users to 570 active participants and fostered a thriving community
+							of over 2,500 members
+			</p>
+		</div>
+		<div class="w-full h-1/5 flex flex-row justify-between items-center gap-2 ">
+			<div
+			class="flex h-2/4 w-1/5  items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+			Solidity
+		</div>
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+			Ether.js
+		</div>
+
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl  items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+			React
+		</div>
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+			GoLang
+		</div>
+		</div>
+	</div>
+	<div class="flex h-[500px] w-full flex-col justify-center rounded-3xl bg-[#292929]  px-5 py-5">
+		<div class="w-full h-[20%] flex flex-col justify-between">
+			<p class="text-3xl font-bold text-[#F4EFEF]">2018 - 2023</p>
+			<p class="text-2xl font-bold text-start text-[#ADA5A5]">Full-stack Dev · Twinmoon Studio</p>
+		</div>
+		<div class="w-full h-3/5 flex justify-center items-center">
+			<p class="text-[#D3D3D3]">
+				I design, develop, and automate websites and mobile applications while ensuring
+				seamless functionality through rigorous testing. My role involves crafting scalable
+				solutions, optimizing performance, and implementing automated workflows to enhance
+				development efficiency and product reliability
+			</p>
+		</div>
+		<div class="w-full h-1/5 flex flex-row justify-between gap-2">
+			<div
+			class="flex h-2/4 w-1/5  items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		NodeJS 
+		</div>
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		SQL
+		</div>
+
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl  items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		NextJS
+		</div>
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		Elixir
+		</div>
+		</div>
+	</div>
+	<div class="flex h-[500px] w-full flex-col justify-center rounded-3xl bg-[#292929]  px-5 py-5">
+		<div class="w-full h-[20%] flex flex-col justify-between">
+			<p class="text-3xl font-bold text-[#F4EFEF]">2017 - 2018</p>
+			<p class="text-2xl font-bold text-start text-[#ADA5A5]">Embedded Engineer · AVIA Satcom</p>
+		</div>
+		<div class="w-full h-3/5 flex justify-center items-center">
+			<p class="text-[#D3D3D3]">
+				I developed software for embedded systems that controlled unmanned aircraft systems
+							(UAS). My work involved designing, optimizing, and implementing low-level firmware and
+							real-time applications to ensure precise control, stability, and efficiency of
+							autonomous operations.
+			</p>
+		</div>
+		<div class="w-full h-1/5 flex flex-row justify-between gap-2">
+			<div
+			class="flex h-2/4 w-1/5  items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		SQL 
+		</div>
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		Java
+		</div>
+
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl  items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		C++
+		</div>
+		<div
+			class="flex h-2/4 w-1/5 3xl:text-3xl items-center justify-center rounded-2xl bg-[#212121] text-[#ADA5A5]"
+		>
+		Bash
+		</div>
+		</div>
+	</div>
+</div>
+
+<div class="hidden lg:flex h-full w-full flex-col lg:gap-5 px-5 lg:py-5">
+	<div class="flex h-3/5 lg:h-1/4 w-full lg:w-[90%] flex-col gap-5 lg:gap-10 py-5">
+		<p class="w-full text-5xl lg:text-6xl 3xl:text-8xl font-bold text-[#F4EFEF]">Experience</p>
+		<p class="h-2/4 w-full text-xl lg:text-3xl 3xl:text-5xl font-thin text-[#ADA5A5]">
 			I have built various software solutions, from websites to mobile apps, using diverse
 			technologies like React, SvelteKit, Golang, and Kubernetes. My experience spans frontend,
 			backend, and cloud infrastructure, leveraging CI/CD pipelines for scalable deployments.
 		</p>
 	</div>
-	<div class="flex h-3/4 w-full flex-col gap-5">
+	<div class="flex h-2/5 lg:h-3/4 w-full flex-col gap-5 ">
 		<div class="hidden h-[10%] w-full xl:w-[90%] xl:flex flex-row items-center justify-between">
 			{#if firstExp}
 				<div
