@@ -187,58 +187,58 @@
 		{@render children()}
 	</div>
 	<!-- Menu -->
-	<div class="fixed bottom-0 left-0 z-40 h-[10%] w-full bg-[#212121]">
+	<div class="fixed bottom-0 left-0 z-40 h-[10%] w-full rounded-t-3xl bg-[#212121]">
 		<div
-			class="flex h-full w-full flex-row items-center justify-between gap-1 rounded-t-3xl bg-[#2A2A2A] py-2"
+			class="flex h-full w-full flex-row items-center justify-between gap-1 rounded-t-3xl bg-[#212121] py-2"
 		>
 			{#if page.url.pathname === '/'}
-				<a class="h-full w-full " href="/">
+				<a class="h-full w-full sm:h-2/4" href="/">
 					<MobileLayoutMenu icon={'home'} color={'#F4EFEF'} />
 				</a>
 			{:else}
-				<a class="h-full w-full " href="/">
+				<a class="h-full w-full sm:h-2/4" href="/">
 					<MobileLayoutMenu icon={'home'} color={'#6A6A6A'} />
 				</a>
 			{/if}
 
 			{#if page.url.pathname === '/experience'}
-			<a class="h-full w-full " href="/experience">
-				<MobileLayoutMenu icon={'exp'} color={'#F4EFEF'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" href="/experience">
+					<MobileLayoutMenu icon={'exp'} color={'#F4EFEF'} />
+				</a>
 			{:else}
-			<a class="h-full w-full " href="/experience">
-				<MobileLayoutMenu icon={'exp'} color={'#6A6A6A'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" href="/experience">
+					<MobileLayoutMenu icon={'exp'} color={'#6A6A6A'} />
+				</a>
 			{/if}
 
 			{#if page.url.pathname === '/project'}
-			<a class="h-full w-full " href="/project">
-				<MobileLayoutMenu icon={'project'} color={'#F4EFEF'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" href="/project">
+					<MobileLayoutMenu icon={'project'} color={'#F4EFEF'} />
+				</a>
 			{:else}
-			<a class="h-full w-full " href="/project">
-				<MobileLayoutMenu icon={'project'} color={'#6A6A6A'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" href="/project">
+					<MobileLayoutMenu icon={'project'} color={'#6A6A6A'} />
+				</a>
 			{/if}
 
 			{#if page.url.pathname === '/about'}
-			<a class="h-full w-full " href="/about">
-				<MobileLayoutMenu icon={'about'} color={'#F4EFEF'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" href="/about">
+					<MobileLayoutMenu icon={'about'} color={'#F4EFEF'} />
+				</a>
 			{:else}
-			<a class="h-full w-full " href="/about">
-				<MobileLayoutMenu icon={'about'} color={'#6A6A6A'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" href="/about">
+					<MobileLayoutMenu icon={'about'} color={'#6A6A6A'} />
+				</a>
 			{/if}
 
 			{#if page.url.pathname === '/contact'}
-			<a class="h-full w-full " href="/contact">
-				<MobileLayoutMenu icon={'contact'} color={'#F4EFEF'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" target="_blank" href="mailto:luck.wtj@gmail.com">
+					<MobileLayoutMenu icon={'contact'} color={'#F4EFEF'} />
+				</a>
 			{:else}
-			<a class="h-full w-full " href="/contact">
-				<MobileLayoutMenu icon={'contact'} color={'#6A6A6A'} />
-			</a>
+				<a class="h-full w-full sm:h-2/4" target="_blank" href="mailto:luck.wtj@gmail.com">
+					<MobileLayoutMenu icon={'contact'} color={'#6A6A6A'} />
+				</a>
 			{/if}
 		</div>
 	</div>
